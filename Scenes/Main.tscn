@@ -1,0 +1,171 @@
+[gd_scene load_steps=19 format=4 uid="uid://bp4wxnhbslprq"]
+
+[ext_resource type="PackedScene" uid="uid://dvigavyivexwb" path="res://UI/Deck.tscn" id="1_idj7w"]
+[ext_resource type="Script" uid="uid://chenxved8git1" path="res://Scripts/Main.gd" id="1_jw32o"]
+[ext_resource type="Texture2D" uid="uid://5gkwhv88flcm" path="res://Sprites/sample_tile.png" id="1_r150o"]
+[ext_resource type="PackedScene" uid="uid://3uyfkd64uueo" path="res://UI/Hand.tscn" id="2_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://dvnknrrgwmsua" path="res://UI/Card.tscn" id="3_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://byh04c1rbvwwd" path="res://UI/Stats.tscn" id="4_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://e5jaoyv223fo" path="res://UI/SideMenu.tscn" id="5_v1gob"]
+[ext_resource type="FontFile" uid="uid://d0djnxonl438d" path="res://Fonts/monogram-extended.ttf" id="7_50glp"]
+[ext_resource type="Texture2D" uid="uid://bb6lldut8b2cy" path="res://Sprites/sample_tile_selected.png" id="9_4kpch"]
+[ext_resource type="Texture2D" uid="uid://b3f5l4dcd68wa" path="res://Sprites/Emitters/microwave_emitter.png" id="9_vy5pj"]
+[ext_resource type="Texture2D" uid="uid://dsxkikss28a0q" path="res://Sprites/Emitters/microwave_animation.png" id="10_bmxlf"]
+[ext_resource type="Script" uid="uid://dwlecht40cvvg" path="res://Scenes/GroundTileMapLayer.gd" id="10_grg3l"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idj7w"]
+texture = ExtResource("1_r150o")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_grg3l"]
+texture = ExtResource("9_4kpch")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kln2b"]
+tile_size = Vector2i(70, 70)
+sources/0 = SubResource("TileSetAtlasSource_idj7w")
+sources/1 = SubResource("TileSetAtlasSource_grg3l")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bmxlf"]
+texture = ExtResource("9_vy5pj")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4kpch"]
+texture = ExtResource("10_bmxlf")
+texture_region_size = Vector2i(70, 70)
+0:0/animation_columns = 2
+0:0/animation_separation = Vector2i(2, 0)
+0:0/animation_speed = 2.0
+0:0/0 = 0
+0:1/animation_columns = 2
+0:1/animation_separation = Vector2i(2, 0)
+0:1/animation_speed = 2.0
+0:1/0 = 0
+0:2/animation_columns = 2
+0:2/animation_separation = Vector2i(2, 0)
+0:2/animation_speed = 2.0
+0:2/0 = 0
+1:2/animation_columns = 2
+1:2/animation_separation = Vector2i(2, 0)
+1:2/animation_speed = 2.0
+1:2/0 = 0
+1:1/animation_columns = 2
+1:1/animation_separation = Vector2i(2, 0)
+1:1/animation_speed = 2.0
+1:1/0 = 0
+1:0/animation_columns = 2
+1:0/animation_separation = Vector2i(2, 0)
+1:0/animation_speed = 2.0
+1:0/0 = 0
+2:1/animation_columns = 2
+2:1/animation_separation = Vector2i(2, 0)
+2:1/animation_speed = 2.0
+2:1/0 = 0
+2:2/animation_columns = 2
+2:2/animation_separation = Vector2i(2, 0)
+2:2/animation_speed = 2.0
+2:2/0 = 0
+2:0/animation_columns = 2
+2:0/animation_separation = Vector2i(2, 0)
+2:0/animation_speed = 2.0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4kpch"]
+tile_size = Vector2i(70, 70)
+sources/0 = SubResource("TileSetAtlasSource_bmxlf")
+sources/7 = SubResource("TileSetAtlasSource_4kpch")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jw32o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Deck" parent="CanvasLayer" instance=ExtResource("1_idj7w")]
+offset_left = 732.0
+offset_top = 397.0
+offset_right = -228.0
+offset_bottom = -143.0
+
+[node name="Hand" parent="CanvasLayer" instance=ExtResource("2_rgh2o")]
+offset_left = 289.0
+offset_top = 395.0
+offset_right = -301.0
+offset_bottom = 1.0
+
+[node name="Card" parent="CanvasLayer/Hand" instance=ExtResource("3_pbw6q")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="Card2" parent="CanvasLayer/Hand" instance=ExtResource("3_pbw6q")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 123.0
+offset_right = 123.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="Card3" parent="CanvasLayer/Hand" instance=ExtResource("3_pbw6q")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 241.0
+offset_right = 241.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="Stats" parent="CanvasLayer" instance=ExtResource("4_pbw6q")]
+offset_top = 360.0
+offset_bottom = 0.0
+
+[node name="SideMenu" parent="CanvasLayer" instance=ExtResource("5_v1gob")]
+offset_left = 890.0
+offset_top = 343.0
+offset_right = 890.0
+offset_bottom = 343.0
+
+[node name="EndTurnButton" type="Button" parent="CanvasLayer"]
+offset_left = 726.0
+offset_top = 353.0
+offset_right = 866.0
+offset_bottom = 393.0
+theme_override_fonts/font = ExtResource("7_50glp")
+theme_override_font_sizes/font_size = 36
+text = "END TURN"
+
+[node name="GroundTileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(130, -516)
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAABAAsAAAAAAAAAAAACAAQAAAAAAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAACAAgAAAAAAAAAAAACAAkAAAAAAAAAAAACAAoAAAAAAAAAAAACAAsAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAADAAcAAAAAAAAAAAADAAgAAAAAAAAAAAADAAkAAAAAAAAAAAADAAoAAAAAAAAAAAADAAsAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAAEAAcAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAkAAAAAAAAAAAAEAAoAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAAFAAcAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAAFAAoAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAoAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAgAAAAAAAAAAAAHAAkAAAAAAAAAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAgAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAD//wsAAAAAAAAAAAD//woAAAAAAAAAAAAKAAoAAAAAAAAAAAAKAAsAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAgAAAAAAAAAAAD//wkAAAAAAAAAAAD//wgAAAAAAAAAAAD//wcAAAAAAAAAAAD//wYAAAAAAAAAAAD//wUAAAAAAAAAAAD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAAKAAAAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_kln2b")
+script = ExtResource("10_grg3l")
+
+[node name="EmitterTileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(130, -516)
+tile_set = SubResource("TileSet_4kpch")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 270)
+limit_left = 0
+limit_top = -640
+limit_right = 960
+limit_bottom = 540
+position_smoothing_enabled = true

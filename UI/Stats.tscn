@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://byh04c1rbvwwd"]
+
+[ext_resource type="Script" uid="uid://c0kikpqk61xpr" path="res://Scripts/Stats.gd" id="1_e1cy4"]
+[ext_resource type="FontFile" uid="uid://d0djnxonl438d" path="res://Fonts/monogram-extended.ttf" id="1_qe7p8"]
+
+[node name="Stats" type="Control"]
+custom_minimum_size = Vector2(250, 180)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -710.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e1cy4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(250, 180)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.91328216, 0.49139136, 5.7756904e-07, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 249.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qe7p8")
+theme_override_font_sizes/font_size = 32
+text = "STATS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShowButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 153.0
+offset_top = -34.0
+offset_right = 251.0
+offset_bottom = -2.0
+theme_override_fonts/font = ExtResource("1_qe7p8")
+theme_override_font_sizes/font_size = 24
+text = "Show Stats"
+
+[node name="HideButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 3.0
+offset_right = 247.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("1_qe7p8")
+theme_override_font_sizes/font_size = 24
+text = "Hide"

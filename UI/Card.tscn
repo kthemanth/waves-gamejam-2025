@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvnknrrgwmsua"]
+
+[ext_resource type="Texture2D" uid="uid://cg1qa2k1ivkg" path="res://Sprites/Cards/card_base_white.png" id="1_7k720"]
+[ext_resource type="FontFile" uid="uid://d0djnxonl438d" path="res://Fonts/monogram-extended.ttf" id="2_7k720"]
+[ext_resource type="Texture2D" uid="uid://jh7k20gap6of" path="res://Sprites/Cards/microwave_card.png" id="3_i4mdr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mfbiv"]
+font = ExtResource("2_7k720")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -852.0
+offset_bottom = -398.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BaseCardImage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_7k720")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 108.0
+offset_bottom = 142.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(98, 0)
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="CardName" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(98, 21)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Microwave"
+label_settings = SubResource("LabelSettings_mfbiv")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CardImage" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(52, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_i4mdr")
+stretch_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_7k720")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[color=red][font_size=26]02[/font_size] Ghz[/color]
+[color=blue][font_size=26]10[/font_size] Tsa[/color]"
+horizontal_alignment = 1

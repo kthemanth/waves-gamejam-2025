@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://e5jaoyv223fo"]
+
+[ext_resource type="Texture2D" uid="uid://dlu7ycjmxnrmd" path="res://Sprites/settings_icon.png" id="1_p0bqd"]
+[ext_resource type="Texture2D" uid="uid://boruf6mvxiosd" path="res://Sprites/inventory_icon.png" id="2_c56kk"]
+[ext_resource type="Texture2D" uid="uid://dpnha8rsl3hpj" path="res://Sprites/quitgame_icon.png" id="2_wj2l8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c56kk"]
+bg_color = Color(0.27085552, 0.0989323, 0.15631786, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+anti_aliasing = false
+
+[node name="SideMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Texturerect" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 46.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c56kk")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 46.0
+offset_bottom = 200.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Settings" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("1_p0bqd")
+stretch_mode = 2
+
+[node name="Inventory" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("2_c56kk")
+stretch_mode = 2
+
+[node name="QuitGame" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("2_wj2l8")
+stretch_mode = 2
