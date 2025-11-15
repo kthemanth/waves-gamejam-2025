@@ -1,0 +1,63 @@
+{
+	"emitters": [
+		{
+			"id": 0,
+			"name": "microwave",
+			"frequency_low": 1,
+			"frequency_high": 5,
+			"amplitude_low": 2,
+			"amplitude_high": 10,
+			"energy_cost": 1,
+		},
+		{
+			"id": 1,
+			"name": "x-ray",
+			"frequency_low": 3,
+			"frequency_high": 8,
+			"amplitude_low": 5,
+			"amplitude_high": 15,
+			"energy_cost": 3,
+		},
+		{
+			"id": 2,
+			"name": "gamma",
+			"frequency_low": 10,
+			"frequency_high": 20,
+			"amplitude_low": 5,
+			"amplitude_high": 15,
+			"energy_cost": 7,
+		},
+		{
+			"id": 3,
+			"name": "ultra-violet",
+			"frequency_low": 25,
+			"frequency_high": 35,
+			"amplitude_low": 2,
+			"amplitude_high": 8,
+			"energy_cost": 20,
+		},
+	],
+	"upgrades": [
+		{
+			"id": 0,
+			"name": "overcharge",
+			"description": "Increase Amplitude",
+			"value": 2,
+			"rarity": "common"
+		},
+		{
+			"id": 1,
+			"name": "tune-up",
+			"description": "Increase Frequency",
+			"value": 1,
+			"rarity": "common"
+		},
+		{
+			"id": 1,
+			"name": "tune-down",
+			"description": "Decrease Frequency",
+			"value": 1,
+			"rarity": "common"
+		}
+	]
+}
